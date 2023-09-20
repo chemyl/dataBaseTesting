@@ -60,7 +60,7 @@
         </pluginRepository>
     </pluginRepositories>
     <build>
-        <finalName>csm-autotesting-1.0-SNAPSHOT</finalName>
+        <finalName>1.0-SNAPSHOT</finalName>
         <directory>target</directory>
         <outputDirectory>target/classes</outputDirectory>
         <testOutputDirectory>target/test-classes</testOutputDirectory>

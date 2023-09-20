@@ -1,7 +1,11 @@
 
 package TestCases.Orders;
 
-import io.qameta.allure.*;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.Story;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -10,17 +14,15 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Logger;
 
 import static io.qameta.allure.SeverityLevel.CRITICAL;
 
-@Owner(value = "chemul.inc@gmail.com")
+@Owner(value = "chemyl.inc@gmail.com")
 @Epic(value = "Orders")
 @Feature(value = "TaskList")
 @Story(value = "")
 
 public class GetTaskListTest {
-    private static final Logger LOGGER = Logger.getLogger(GetTaskListTest.class.getName());
 
     private static long taskCode;
     private static String taskNum;
@@ -96,9 +98,9 @@ public class GetTaskListTest {
 
     @AfterTest
     private void disconnectDb() throws IOException, SQLException {
-            resultSet.close();
-            preparedStatement.close();
-            TestConfig.DataBase.getConTest().close();
+        resultSet.close();
+        preparedStatement.close();
+        TestConfig.DataBase.getConTest().close();
     }
 
     public static long getTaskCode() {

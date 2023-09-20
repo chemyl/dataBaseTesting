@@ -5,10 +5,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Logger;
 
 public class DataBase {
-    private static final Logger LOGGER = Logger.getLogger(DataBase.class.getName());
 
     private static StringBuilder stringBuilder;
     private static String url;
@@ -45,7 +43,7 @@ public class DataBase {
         return url;
     }
 
-    private static String setConPilot() throws IOException {
+    private static synchronized String setConPilot() throws IOException {
         driver = TestConfig.FilePath.getConfig().getProperty("db.pilot.driver");
         login = TestConfig.FilePath.getConfig().getProperty("db.pilot.login");
         password = TestConfig.FilePath.getConfig().getProperty("db.pilot.pass");
